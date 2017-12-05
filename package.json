@@ -1,0 +1,8 @@
+{
+  "name": "income-calculator",
+  "version": "1.0.0",
+  "author": "Zhiyuan Zhao",
+  "dependencies": {
+    "yargs": "^10.0.3"
+  }
+}
