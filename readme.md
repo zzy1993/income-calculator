@@ -2,6 +2,68 @@
 
 ------------------
 
+## 说明
+
+Zhiyuan Zhao
+
+### 简介
+
+#### 设计思路
+  本程序为基于node.js的命令行五险一金/工资计算器, 可批量生成员工的五险一金/工资条, 完全实现了下文所有要求.
+  本程序核心为 Employee 类, 对每一员工的属性与操作进行了封装. Employee中提供了对五险一金/工资的计算/存储/打印的方法. 程序内还包括读取文件的各种方法. 
+  注意写文件时为append模式, 将在已有文件末尾继续添加内容.
+  
+#### 示例
+  - 读文件,写文件 
+  ```node calculator.js -i ./员工名单.csv -s ./insurance.csv -c ./income.csv```
+  - 读命令行,写命令行 
+  ```node calculator.js```
+  - 读命令行,写五险一金到命令行,写工资到文件 
+  ```node calculator.js -c ./income.csv```
+  
+#### 用法
+
+开始时安装yargs包 
+```npm install```
+
+用法
+```sh
+Usage: node calculator.js [options]
+
+Options:
+  --version        Show version number                                 [boolean]
+  -i, --input      输入员工名单文件路径, 默认键盘读取   [string] [default: null]
+  -s, --insurance  输出五险一金文件路径, 默认命令行打印 [string] [default: null]
+  -c, --income     输出工资条文件路径, 默认命令行打印   [string] [default: null]
+  -h, --help       Show help                                           [boolean]
+
+Examples:
+  node calculator.js -i ./员工名单.csv -s ./insurance.csv -c ./income.csv
+```
+
+
+#### 实现了如下功能
+  1. 从提供的四份数据文件读取本市职工月平均工资、五险费率、个税税率、绩效工资标准。
+    - 完成
+  2. 从提供的员工名单文件读取员工姓名、岗位工资、绩效评分、住房公积金比例。
+    - 完成
+  3. 计算员工工资条上应显示的所有数值。
+    - 完成
+    
+#### 满足了如下要求
+  1. 员工岗位工资、绩效评分与住房公积金百分比可以从员工名单文件读取，也可以由键盘输入。
+    - 完成, 可以通过```-i```指定"员工名单"输入方式, 默认命令行读取.
+  2. 使用面向对象编程或函数式编程。
+    - 完成.
+  3. 可以输出至csv文件或展现在屏幕上。
+    - 完成, 可以通过```-s```与```-c```分别指定"五险一金"与"工资条"输出方式, 默认命令行打印. 
+  4. 程序应可扩展、可读。
+    - 完成, 程序最大程度避免 hard coding, 同时所有配置可通过开头常量更改.
+    
+&copy; Zhiyuan Zhao
+
+------------------
+
 ## 编程能力测试 
 
 ###问题
